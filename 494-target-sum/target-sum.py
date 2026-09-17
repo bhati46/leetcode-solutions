@@ -2,7 +2,7 @@ class Solution:
     def findTargetSumWays(self, nums: list[int], target: int) -> int:
         n=len(nums)
         total=sum(nums)
-        dp=[[-1 for _ in range(2*total+1)] for _ in range(n+2)]
+        dp=[[-1 for _ in range(2*total+1)] for _ in range(n+1)]
         def memo(i,cursum):
             if i==0:
                 return 1 if cursum == target else 0
