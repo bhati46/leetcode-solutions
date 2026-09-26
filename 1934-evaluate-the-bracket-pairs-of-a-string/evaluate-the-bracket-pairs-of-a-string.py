@@ -4,7 +4,7 @@ class Solution:
         y=""
         i=0
         while i<len(s):
-            if s[i]=="(": # checking if the sting has ( in s 
+            if s[i]=="(": # checking if the string has ( in s 
                 key=""
                 j=i+1
                 while s[j] !=")":# it will work till the  ) has ended 
