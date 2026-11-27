@@ -8,19 +8,19 @@ class Solution:
     def pathSum(self, root: TreeNode | None, targetSum: int) -> list[list[int]]:
         a=[]
         b=[]
-        def fun(b,curroot,currsum):
+        def fun(b,cur,cursum):
             nonlocal a
-            if curroot == None:
+            if cur == None:
                 return 
-            currsum+=curroot.val
-            b.append(curroot.val)
-            if curroot.left == None and curroot.right ==None:
-                if currsum == targetSum:
+            cursum+=cur.val
+            b.append(cur.val)
+            if cur.left == None and cur.right == None:
+                if cursum == targetSum:
                     a.append(b.copy())
-            if curroot.right!=None:
-                fun(b,curroot.right,currsum)
-            if curroot.left!=None:
-                fun(b,curroot.left,currsum)
+            if cur.left!=None:
+                fun(b,cur.left,cursum)
+            if cur.right!=None:
+                fun(b,cur.right,cursum)
             b.pop()
         fun(b,root,0)
         return a
